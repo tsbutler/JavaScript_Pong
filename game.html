@@ -14,11 +14,11 @@ window.onload = function() {
   canvas = document.getElementById('gameCanvas');
   canvasContext = canvas.getContext('2d');
   
-  setInterval(drawEverything, 1000);
+  setInterval(drawEverything, 50);
   }
 
 function drawEverything() {
-  ballX = ballX + 10;
+  ballX = ballX + 1;
 
   console.log(ballX);
   canvasContext.fillStyle = 'black';
