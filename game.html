@@ -13,7 +13,8 @@ window.onload = function() {
   console.log("hello world!");  
   canvas = document.getElementById('gameCanvas');
   canvasContext = canvas.getContext('2d');
-  drawEverything();
+  
+  setInterval(drawEverything, 1000);
   }
 
 function drawEverything() {
