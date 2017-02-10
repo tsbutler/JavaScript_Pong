@@ -19,11 +19,15 @@ window.onload = function() {
   }
 
 function drawEverything() {
-  ballX = ballX + 1;
+  ballX = ballX + 10;
   canvasContext.fillStyle = 'black';
   canvasContext.fillRect(0,0,canvas.width,canvas.height);
+  canvasContext.fillStyle = 'white';
+  canvasContext.fillRect(0,100,10,100);
   canvasContext.fillStyle = 'red';
   canvasContext.fillRect(ballX,200,50,25);
+  
+
 }  
   
 </script>
