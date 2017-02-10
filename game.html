@@ -15,11 +15,18 @@ window.onload = function() {
   canvasContext = canvas.getContext('2d');
   
   var framesPerSecond = 30;
-  setInterval(drawEverything, 1000/framesPerSecond);
+  setInterval(callBoth, 1000/framesPerSecond);
   }
 
-function drawEverything() {
+function callBoth() {
+  moveEverything();
+  drawEverything();
+}
+
+function moveEverything() {
   ballX = ballX + 10;
+}
+function drawEverything() {
   canvasContext.fillStyle = 'black';
   canvasContext.fillRect(0,0,canvas.width,canvas.height);
   canvasContext.fillStyle = 'white';
