@@ -25,7 +25,13 @@ window.onload = function() {
 }
 
 function moveEverything() {
+  // This function moves the ball
   ballX = ballX + ballSpeedX;
+  ballDirection();  
+}
+
+function ballDirection() {
+  // This function bounces the ball off each edge of the screen
   if( ballX > canvas.width - ballWidth ) {
     ballSpeedX = -ballSpeedX;
   }
@@ -35,8 +41,14 @@ function moveEverything() {
 }
 
 function drawEverything() {
+  
+  // The following line blacks out the screen providing the background
   colorRect( 0, 0, canvas.width, canvas.height, 'black' );
+  
+  // The following line draws the left paddle
   colorRect( 0, 100, 10, 100, 'white' );
+
+  // The following line draws the ball
   colorRect( ballX, 200, ballWidth, ballHeight, 'red' )
 }  
 
