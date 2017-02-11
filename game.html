@@ -9,6 +9,8 @@ var canvas;
 var canvasContext;
 var ballX = 50;
 var ballSpeedX = 5;
+var ballHeight = 25;
+var ballWidth =25;
 
 window.onload = function() {
   console.log("hello world!");  
@@ -24,7 +26,7 @@ window.onload = function() {
 
 function moveEverything() {
   ballX = ballX + ballSpeedX;
-  if( ballX > canvas.width ) {
+  if( ballX > canvas.width - ballWidth ) {
     ballSpeedX = -ballSpeedX;
   }
   if( ballX < 0) {
@@ -33,15 +35,15 @@ function moveEverything() {
 }
 
 function drawEverything() {
-  canvasContext.fillStyle = 'black';
-  canvasContext.fillRect(0,0,canvas.width,canvas.height);
-  canvasContext.fillStyle = 'white';
-  canvasContext.fillRect(0,100,10,100);
-  canvasContext.fillStyle = 'red';
-  canvasContext.fillRect(ballX,200,25,25);
-  
-
+  colorRect( 0, 0, canvas.width, canvas.height, 'black' );
+  colorRect( 0, 100, 10, 100, 'white' );
+  colorRect( ballX, 200, ballWidth, ballHeight, 'red' )
 }  
+
+function colorRect( leftX, topY, width, height, drawColor ) {
+  canvasContext.fillStyle = drawColor;
+  canvasContext.fillRect( leftX, topY, width, height )
+}
   
 </script>
 </body>
