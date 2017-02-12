@@ -9,8 +9,6 @@ var canvas;
 var canvasContext;
 var ballX = 50;
 var ballSpeedX = 5;
-var ballHeight = 25;
-var ballWidth =25;
 
 window.onload = function() {
   console.log("hello world!");  
@@ -32,7 +30,7 @@ function moveEverything() {
 
 function ballDirection() {
   // This function bounces the ball off each edge of the screen
-  if( ballX > canvas.width - ballWidth || ballX < 0 ) {
+  if( ballX > canvas.width || ballX < 0 ) {
     ballSpeedX = -ballSpeedX;
   }
 }
@@ -46,7 +44,10 @@ function drawEverything() {
   colorRect( 0, 100, 10, 100, 'white' );
 
   // The following line draws the ball
-  colorRect( ballX, 200, ballWidth, ballHeight, 'red' )
+  canvasContext.fillStyle = 'red';
+  canvasContext.beginPath();
+  canvasContext.arc(ballX, 100, 10, 0, Math.PI * 2, true);
+  canvasContext.fill();
 }  
 
 function colorRect( leftX, topY, width, height, drawColor ) {
