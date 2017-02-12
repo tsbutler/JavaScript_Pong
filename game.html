@@ -32,10 +32,7 @@ function moveEverything() {
 
 function ballDirection() {
   // This function bounces the ball off each edge of the screen
-  if( ballX > canvas.width - ballWidth ) {
-    ballSpeedX = -ballSpeedX;
-  }
-  if( ballX < 0) {
+  if( ballX > canvas.width - ballWidth || ballX < 0 ) {
     ballSpeedX = -ballSpeedX;
   }
 }
