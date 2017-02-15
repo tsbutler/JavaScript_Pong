@@ -5,14 +5,20 @@
 <body>
 <canvas id="gameCanvas" width="800" height="600"></canvas>
 <script>
+//Variables concerned with the canvas element
 var canvas;
 var canvasContext;
+
+//Variables concerned with the ball
 var ballX = 50;
 var ballY = 50;
 var ballSpeedX = 10;
 var ballSpeedY = 4;
 var radius = 10;
+
+//variables concerned with the paddles
 var paddle1Y = 250;
+var paddle2Y = 250;
 const PADDLE_HEIGHT = 100;
 
 function calculateMousePos(evt) {
@@ -82,6 +88,9 @@ function drawEverything() {
   
   // The following line draws the left paddle
   colorRect( 0, paddle1Y, 10, PADDLE_HEIGHT, 'white' );
+
+  // The following line draws the right computer paddle
+  colorRect( canvas.width - 10, paddle2Y, 10, PADDLE_HEIGHT, 'white' );
 
   // The following line draws the ball
   colorCircle(ballX, ballY, radius, 'white');
