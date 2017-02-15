@@ -20,6 +20,7 @@ var radius = 10;
 var paddle1Y = 250;
 var paddle2Y = 250;
 const PADDLE_HEIGHT = 100;
+const PADDLE_THICKNESS = 10;
 
 function calculateMousePos(evt) {
   var rect = canvas.getBoundingClientRect();
@@ -87,10 +88,10 @@ function drawEverything() {
   colorRect( 0, 0, canvas.width, canvas.height, 'black' );
   
   // The following line draws the left paddle
-  colorRect( 0, paddle1Y, 10, PADDLE_HEIGHT, 'white' );
+  colorRect( 0, paddle1Y, PADDLE_THICKNESS, PADDLE_HEIGHT, 'white' );
 
   // The following line draws the right computer paddle
-  colorRect( canvas.width - 10, paddle2Y, 10, PADDLE_HEIGHT, 'white' );
+  colorRect( canvas.width - PADDLE_THICKNESS, paddle2Y, PADDLE_THICKNESS, PADDLE_HEIGHT, 'white' );
 
   // The following line draws the ball
   colorCircle(ballX, ballY, radius, 'white');
