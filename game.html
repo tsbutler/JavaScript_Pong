@@ -75,7 +75,12 @@ function ballDirection() {
     }
   }
   if( ballX > canvas.width - radius ) {
-    ballSpeedX = -ballSpeedX; 
+    if( ballY > paddle2Y &&
+        ballY < paddle2Y + PADDLE_HEIGHT ) {
+      ballSpeedX = -ballSpeedX;
+    } else {
+      ballReset();
+    }
   }
   if( ballY > canvas.height - radius || ballY < radius ) {
     ballSpeedY = -ballSpeedY; 
