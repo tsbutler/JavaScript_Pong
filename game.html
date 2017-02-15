@@ -45,9 +45,11 @@ window.onload = function() {
 }
 
 function ballReset() {
+  ballSpeedX = -ballSpeedX;
   ballX = canvas.width / 2;
   ballY = canvas.height / 2;
 }
+
 function moveEverything() {
   // This function moves the ball
   ballX = ballX + ballSpeedX;
@@ -57,8 +59,16 @@ function moveEverything() {
 
 function ballDirection() {
   // This function bounces the ball off each edge of the screen
-  if( ballX > canvas.width - radius || ballX < radius ) {
-    ballSpeedX = -ballSpeedX;
+  if( ballX < radius ) {
+    if( ballY > paddle1Y &&
+        ballY < paddle1Y + PADDLE_HEIGHT ) {
+      ballSpeedX = -ballSpeedX;
+    } else {
+      ballReset();  
+    }
+  }
+  if( ballX > canvas.width - radius ) {
+    ballSpeedX = -ballSpeedX; 
   }
   if( ballY > canvas.height - radius || ballY < radius ) {
     ballSpeedY = -ballSpeedY; 
