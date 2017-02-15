@@ -47,7 +47,7 @@ window.onload = function() {
   canvas.addEventListener('mousemove',
     function(evt) {
       var mousePos = calculateMousePos(evt);
-      paddle1Y = mousePos.y - ( PADDLE_HEIGHT / 2 )
+      paddle2Y = mousePos.y - ( PADDLE_HEIGHT / 2 )
   });
 }
 
@@ -91,7 +91,7 @@ function drawEverything() {
   colorRect( 0, paddle1Y, PADDLE_THICKNESS, PADDLE_HEIGHT, 'white' );
 
   // The following line draws the right computer paddle
-  colorRect( canvas.width - PADDLE_THICKNESS, paddle2Y, PADDLE_THICKNESS, PADDLE_HEIGHT, 'white' );
+  colorRect( canvas.width - PADDLE_THICKNESS, paddle2Y,PADDLE_THICKNESS, PADDLE_HEIGHT, 'white' );
 
   // The following line draws the ball
   colorCircle(ballX, ballY, radius, 'white');
