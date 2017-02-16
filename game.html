@@ -9,18 +9,23 @@
 var canvas;
 var canvasContext;
 
-//Variables concerned with the ball
+// Variables concerned with the ball
 var ballX = 50;
 var ballY = 50;
 var ballSpeedX = 10;
 var ballSpeedY = 4;
 var radius = 10;
 
-//variables concerned with the paddles
+// Variables concerned with the paddles
 var paddle1Y = 250;
 var paddle2Y = 250;
 const PADDLE_HEIGHT = 100;
 const PADDLE_THICKNESS = 10;
+
+// Variables concerned with scorekeeping
+var player1Score = 0;
+var player2Score = 0;
+
 
 function calculateMousePos(evt) {
   var rect = canvas.getBoundingClientRect();
@@ -118,6 +123,8 @@ function drawEverything() {
 
   // The following line draws the ball
   colorCircle(ballX, ballY, radius, 'white');
+
+  canvasContext.fillText("score stuff", 100, 100);
 }  
 
 function colorCircle(centerX, centerY, radius, drawColor) {
