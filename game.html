@@ -94,7 +94,8 @@ function ballDirection() {
         ballY < paddle1Y + PADDLE_HEIGHT ) {
       ballSpeedX = -ballSpeedX;
     } else {
-      ballReset();  
+      ballReset();
+      player1Score++;  
     }
   }
   if( ballX > canvas.width - radius ) {
@@ -103,6 +104,7 @@ function ballDirection() {
       ballSpeedX = -ballSpeedX;
     } else {
       ballReset();
+      player2Score++;
     }
   }
   if( ballY > canvas.height - radius || ballY < radius ) {
@@ -124,7 +126,9 @@ function drawEverything() {
   // The following line draws the ball
   colorCircle(ballX, ballY, radius, 'white');
 
-  canvasContext.fillText("score stuff", 100, 100);
+  canvasContext.fillText( player1Score, 100, 100);
+  canvasContext.fillText( player2Score, 700, 100);
+
 }  
 
 function colorCircle(centerX, centerY, radius, drawColor) {
