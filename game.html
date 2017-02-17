@@ -93,6 +93,9 @@ function ballDirection() {
     if( ballY > paddle1Y &&
         ballY < paddle1Y + PADDLE_HEIGHT ) {
       ballSpeedX = -ballSpeedX;
+
+      var deltaY = ballY
+        - ( paddle1Y + PADDLE_HEIGHT/2 );
     } else {
       ballReset();
       player1Score++;  
