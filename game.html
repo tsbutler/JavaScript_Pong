@@ -96,6 +96,7 @@ function ballDirection() {
 
       var deltaY = ballY
         - ( paddle1Y + PADDLE_HEIGHT/2 );
+        ballSpeedY = deltaY * 0.35;
     } else {
       ballReset();
       player1Score++;  
