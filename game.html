@@ -25,6 +25,7 @@ const PADDLE_THICKNESS = 10;
 // Variables concerned with scorekeeping
 var player1Score = 0;
 var player2Score = 0;
+const WINNING_SCORE = 3;
 
 
 function calculateMousePos(evt) {
@@ -98,8 +99,8 @@ function ballDirection() {
         - ( paddle1Y + PADDLE_HEIGHT/2 );
         ballSpeedY = deltaY * 0.35;
     } else {
-      ballReset();
-      player1Score++;  
+      player1Score++;
+      ballReset();  
     }
   }
   if( ballX > canvas.width - radius ) {
@@ -111,8 +112,8 @@ function ballDirection() {
         - ( paddle2Y + PADDLE_HEIGHT/2 );
         ballSpeedY = deltaY * 0.35;
     } else {
-      ballReset();
       player2Score++;
+      ballReset();
     }
   }
   if( ballY > canvas.height - radius || ballY < radius ) {
