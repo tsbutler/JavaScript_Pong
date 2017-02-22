@@ -118,7 +118,7 @@ function ballDirection() {
         - ( paddle1Y + PADDLE_HEIGHT/2 );
         ballSpeedY = deltaY * 0.35;
     } else {
-      player1Score++; // Must be BEFORE ballReset()
+      player2Score++; // Must be BEFORE ballReset()
       ballReset();  
     }
   }
@@ -131,7 +131,7 @@ function ballDirection() {
         - ( paddle2Y + PADDLE_HEIGHT/2 );
         ballSpeedY = deltaY * 0.35;
     } else {
-      player2Score++; // Must be BEFORE ballReset
+      player1Score++; // Must be BEFORE ballReset
       ballReset();
     }
   }
