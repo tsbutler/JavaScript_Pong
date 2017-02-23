@@ -164,6 +164,9 @@ function drawEverything() {
     return;
   }
   
+  // The following calls the function that draws the net
+  drawNet();
+
   // The following line draws the left paddle
   colorRect( 0, paddle1Y, PADDLE_THICKNESS, PADDLE_HEIGHT, 'white' );
 
