@@ -35,7 +35,7 @@ function calculateMousePos(evt) {
 }
 
 function handleMouseClick(evt) {
-  if(showingWinScreen) {
+  if( showingWinScreen ) {
     player1Score = 0;
     player2Score = 0;
     showingWinScreen = false;
@@ -147,13 +147,13 @@ function drawEverything() {
   if( showingWinScreen ) {
     canvasContext.fillStyle = 'white';
 
-    if(player1Score >= WINNING_SCORE){
+    if( player1Score >= WINNING_SCORE ){
       canvasContext.fillText( "LEFT PLAYER WON!", 350, 200);
-    } else if(player2Score >= WINNING_SCORE) {
+    } else if( player2Score >= WINNING_SCORE ) {
       canvasContext.fillText( "RIGHT PLAYER WON!", 350, 200);
     } 
     
-    canvasContext.fillText( "CLICK TO CONTINUE", 350, 500);
+    canvasContext.fillText( "CLICK TO CONTINUE", 350, 400);
     return;
   }
   
@@ -167,14 +167,14 @@ function drawEverything() {
   colorRect( canvas.width - PADDLE_THICKNESS, paddle2Y,PADDLE_THICKNESS, PADDLE_HEIGHT, 'white' );
 
   // The following line draws the ball
-  colorCircle(ballX, ballY, radius, 'white');
+  colorCircle( ballX, ballY, radius, 'white' );
 
-  canvasContext.fillText( player1Score, 100, 100);
-  canvasContext.fillText( player2Score, canvas.width - 100, 100);
+  canvasContext.fillText( player1Score, 100, 100 );
+  canvasContext.fillText( player2Score, canvas.width - 100, 100 );
 
 }  
 
-function colorCircle(centerX, centerY, radius, drawColor) {
+function colorCircle( centerX, centerY, radius, drawColor ) {
   canvasContext.fillStyle = drawColor;
   canvasContext.beginPath();
   canvasContext.arc(centerX, centerY, radius, 0, Math.PI * 2, true);
